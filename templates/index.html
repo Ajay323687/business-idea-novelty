@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Idea Novelty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- PARTICLES BACKGROUND -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- GRADIENT ORBS -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <span>SEMANTIC SIMILARITY ENGINE</span>
+        <span class="top-dot">◆</span>
+        <span>REAL-TIME WEB ANALYSIS</span>
+        <span class="top-dot">◆</span>
+        <span>SENTENCE-BERT POWERED</span>
+        <span class="top-dot">◆</span>
+        <span>MCA FINAL YEAR PROJECT</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-meta">VOL. 1 · <span id="currentDate"></span></div>
+            <div class="header-center">
+                <div class="title-eyebrow">THE</div>
+                <h1 class="site-title">Business Idea<br><em>Novelty</em></h1>
+                <div class="title-sub">INTELLIGENCE REPORT</div>
+            </div>
+            <div class="header-meta text-right">ISSUE NO. 01 · ANALYSIS DESK</div>
+        </div>
+        <div class="header-rule"></div>
+        <nav class="header-nav">
+            <span>IDEA ANALYSIS</span>
+            <span>MARKET INTELLIGENCE</span>
+            <span>SIMILARITY REPORT</span>
+            <span>INNOVATION INDEX</span>
+            <span>STARTUP DESK</span>
+        </nav>
+        <div class="header-rule thin"></div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-tag">
+                    <span class="tag-line"></span>
+                    EXCLUSIVE ANALYSIS
+                </div>
+                <h2 class="hero-headline">Is Your Business<br>Idea <em>Truly</em><br>Original?</h2>
+                <p class="hero-deck">Our proprietary semantic intelligence engine searches the web in real time — comparing your concept against thousands of existing ventures using cutting-edge AI.</p>
+                <div class="hero-stats">
+                    <div class="stat glass-stat">
+                        <div class="stat-num">BERT</div>
+                        <div class="stat-label">AI Model</div>
+                    </div>
+                    <div class="stat glass-stat">
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label">Real Time</div>
+                    </div>
+                    <div class="stat glass-stat">
+                        <div class="stat-num">Live</div>
+                        <div class="stat-label">Web Search</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="input-card glass-card">
+                    <div class="input-card-header">
+                        <span class="input-card-tag">◆ SUBMIT FOR ANALYSIS</span>
+                    </div>
+                    <textarea
+                        id="ideaInput"
+                        placeholder="Describe your business idea in detail...&#10;&#10;e.g. 'An AI-powered platform that matches freelance chefs with home dinner party hosts'"
+                        rows="6"
+                    ></textarea>
+                    <button id="analyzeBtn" onclick="analyzeIdea()" class="glass-btn">
+                        <span id="btnText">ANALYZE IDEA →</span>
+                        <span id="btnLoader" style="display:none">⏳ ANALYZING...</span>
+                    </button>
+                    <div class="input-hint">Press button or Ctrl+Enter to analyze</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="resultsSection" style="display:none">
+        <div class="results-inner">
+
+            <!-- SCORE BANNER -->
+            <div class="score-banner glass-card">
+                <div class="score-banner-left">
+                    <div class="score-tag">NOVELTY VERDICT</div>
+                    <div class="score-big" id="scoreBig">--</div>
+                    <div class="score-label" id="scoreLabel">--</div>
+                    <div class="category-badge" id="categoryBadge">--</div>
+                </div>
+                <div class="score-banner-center">
+                    <div class="score-meter-wrap">
+                        <div class="score-meter-bg">
+                            <div class="score-meter-fill" id="scoreMeter" style="width:0%"></div>
+                        </div>
+                        <div class="score-meter-labels">
+                            <span>HIGHLY SIMILAR</span>
+                            <span>MODERATELY NOVEL</span>
+                            <span>HIGHLY NOVEL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="score-banner-right">
+                    <div class="score-icon" id="scoreIcon">--</div>
+                    <div class="score-percent" id="scorePercent">--%</div>
+                </div>
+            </div>
+
+            <!-- GRID -->
+            <div class="results-grid">
+
+                <!-- MATCHES -->
+                <div class="results-main">
+                    <div class="section-header">
+                        <div class="section-rule"></div>
+                        <h3 class="section-title">Similar Ventures Found</h3>
+                        <div class="section-rule"></div>
+                    </div>
+                    <div id="matchesList"></div>
+                </div>
+
+                <!-- RADAR + SUGGESTIONS -->
+                <div class="results-aside">
+
+                    <!-- RADAR -->
+                    <div class="radar-widget glass-card">
+                        <div class="section-header">
+                            <div class="section-rule"></div>
+                            <h3 class="section-title">Innovation Radar</h3>
+                            <div class="section-rule"></div>
+                        </div>
+                        <div class="radar-container">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                        <div class="radar-legend">
+                            <div class="radar-legend-item"><span class="dot-gold"></span> Your Idea</div>
+                            <div class="radar-legend-item"><span class="dot-white"></span> Market Average</div>
+                        </div>
+                    </div>
+
+                    <!-- SUGGESTIONS -->
+                    <div class="suggestions-widget">
+                        <div class="section-header">
+                            <div class="section-rule"></div>
+                            <h3 class="section-title">Strategic Recommendations</h3>
+                            <div class="section-rule"></div>
+                        </div>
+                        <div id="suggestionsList"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-rule"></div>
+        <div class="footer-inner">
+            <span>BUSINESS IDEA NOVELTY</span>
+            <span>·</span>
+            <span>Semantic Similarity Based Analysis</span>
+            <span>·</span>
+            <span>MCA Final Year Project © 2024</span>
+        </div>
+        <div class="footer-rule"></div>
+    </footer>
+
+    <script src="/static/script.js"></script>
+    <script>
+        document.getElementById("currentDate").textContent = new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}).toUpperCase();
+    </script>
+</body>
+</html>
