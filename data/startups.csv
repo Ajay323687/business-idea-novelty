@@ -1,0 +1,26 @@
+idea_name,category,idea_text
+OneCLI – Vault for AI Agents in Rust,Technology,OneCLI – Vault for AI Agents in Rust
+Axe – A 12MB binary that replaces your AI framework,Technology,Axe – A 12MB binary that replaces your AI framework
+Detect any object in satellite imagery using a text prompt,Technology,Detect any object in satellite imagery using a text prompt
+Understudy – Teach a desktop agent by demonstrating a task o,Technology,Understudy – Teach a desktop agent by demonstrating a task once
+OpenClaw-class agents on ESP32 (and the IDE that makes it po,Technology,OpenClaw-class agents on ESP32 (and the IDE that makes it possible)
+Rudel – Claude Code Session Analytics,Technology,Rudel – Claude Code Session Analytics
+Web-based ANSI art viewer,Technology,Web-based ANSI art viewer
+s@: decentralized social networking over static sites,Technology,s@: decentralized social networking over static sites
+An application stack Claude coded directly in LLVM IR,Technology,An application stack Claude coded directly in LLVM IR
+Slop or not – can you tell AI writing from human in everyday,Technology,Slop or not – can you tell AI writing from human in everyday contexts?
+PipeStep – Step-through debugger for GitHub Actions workflow,Technology,PipeStep – Step-through debugger for GitHub Actions workflows
+Open-source browser for AI agents,Technology,Open-source browser for AI agents
+I built a tool that watches webpages and exposes changes as ,Technology,I built a tool that watches webpages and exposes changes as RSS
+microsoft/BitNet,Open Source,Official inference framework for 1-bit LLMs
+fishaudio/fish-speech,Open Source,SOTA Open Source TTS
+langflow-ai/openrag,Open Source,"OpenRAG is a comprehensive, single package Retrieval-Augmented Generation platform built on Langflow, Docling, and Opensearch."
+InsForge/InsForge,Open Source,Give agents everything they need to ship fullstack apps. The backend built for agentic development.
+vectorize-io/hindsight,Open Source,Hindsight: Agent Memory That Learns
+alibaba/page-agent,Open Source,JavaScript in-page GUI agent. Control web interfaces with natural language.
+obra/superpowers,Open Source,An agentic skills framework & software development methodology that works.
+NousResearch/hermes-agent,Open Source,The agent that grows with you
+666ghj/MiroFish,Open Source,"A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物"
+google-ai-edge/LiteRT,Open Source,"LiteRT, successor to TensorFlow Lite. is Google's On-device framework for high-performance ML & GenAI deployment on edge platforms, via efficient conversion, runtime, and optimization"
+msitarzewski/agency-agents,Open Source,"A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables."
+google/A2UI,Open Source,"Official, Anthropic-managed directory of high quality Claude Code Plugins."
