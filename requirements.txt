@@ -1,8 +1,7 @@
-requests
-python-dotenv
-beautifulsoup4
-sentence-transformers
-scikit-learn
-numpy
+exa-py
 flask
+groq
 pandas
+python-dotenv
+requests
+sentence-transformers

@@ -1,0 +1,101 @@
+ID,Business Idea,Industry Domain,SBERT Novelty Score,Market Classification,Evaluation Status
+001,Drone-based autonomous pesticide sprayer,AgriTech,50%,Promising (Med),PASSED
+002,IoT soil nutrient monitoring sensor,AgriTech,50%,Promising (Med),PASSED
+003,AI-powered crop disease prediction app,AgriTech,50%,Promising (Med),PASSED
+004,Hydroponic vertical farming automated kit,AgriTech,50%,Promising (Med),PASSED
+005,Smart solar-powered irrigation controller,AgriTech,50%,Promising (Med),PASSED
+006,B2B marketplace for organic fertilizers,AgriTech,50%,Promising (Med),PASSED
+007,Predictive weather analytics for crop yield,AgriTech,50%,Promising (Med),PASSED
+008,Automated cattle health tracking wearable,AgriTech,50%,Promising (Med),PASSED
+009,Robotic weed removal system for fields,AgriTech,50%,Promising (Med),PASSED
+010,Satellite-based soil moisture mapping platform,AgriTech,50%,Promising (Med),PASSED
+011,Blockchain-based decentralized micro-loans,FinTech,50%,Promising (Med),PASSED
+012,AI-driven automated personal tax filler,FinTech,50%,Promising (Med),PASSED
+013,Peer-to-peer crypto insurance marketplace,FinTech,50%,Promising (Med),PASSED
+014,Fractional real estate investing platform,FinTech,50%,Promising (Med),PASSED
+015,Smart expense tracker for freelance workers,FinTech,50%,Promising (Med),PASSED
+016,Voice-activated biometric payment gateway,FinTech,50%,Promising (Med),PASSED
+017,Automated cross-border remittance system,FinTech,50%,Promising (Med),PASSED
+018,AI risk assessment tool for small business loans,FinTech,50%,Promising (Med),PASSED
+019,Decentralized carbon credit trading registry,FinTech,50%,Promising (Med),PASSED
+020,Micro-savings app based on daily round-ups,FinTech,50%,Promising (Med),PASSED
+021,AI tutor for personalized exam preparation,EdTech,50%,Promising (Med),PASSED
+022,VR-based immersive historical field trips,EdTech,50%,Promising (Med),PASSED
+023,Gamified coding platform for young children,EdTech,50%,Promising (Med),PASSED
+024,Peer-to-peer live skill sharing network,EdTech,50%,Promising (Med),PASSED
+025,AI essay grader and structural feedback tool,EdTech,50%,Promising (Med),PASSED
+026,Decentralized blockchain university degree verification,EdTech,50%,Promising (Med),PASSED
+027,Adaptive reading app for dyslexic students,EdTech,50%,Promising (Med),PASSED
+028,B2B corporate upskilling micro-course platform,EdTech,50%,Promising (Med),PASSED
+029,Live interactive math labs using augmented reality,EdTech,50%,Promising (Med),PASSED
+030,AI audio summarizer for textbooks,EdTech,50%,Promising (Med),PASSED
+031,Wearable device for real-time hydration tracking,HealthTech,50%,Promising (Med),PASSED
+032,AI-powered skin cancer screening mobile app,HealthTech,50%,Promising (Med),PASSED
+033,Telehealth platform for specialized rural care,HealthTech,50%,Promising (Med),PASSED
+034,Smart pill dispenser with automated alerts,HealthTech,50%,Promising (Med),PASSED
+035,Predictive analytics for hospital bed management,HealthTech,50%,Promising (Med),PASSED
+036,Mental health chatbot using CBT methods,HealthTech,50%,Promising (Med),PASSED
+037,Blockchain-based secure medical records vault,HealthTech,50%,Promising (Med),PASSED
+038,AI posture corrector for remote desktop workers,HealthTech,50%,Promising (Med),PASSED
+039,DNA-based personalized meal delivery engine,HealthTech,50%,Promising (Med),PASSED
+040,AR assistance software for physical therapy,HealthTech,50%,Promising (Med),PASSED
+041,Marketplace for buying second-hand textbooks,Ecommerce,50%,Promising (Med),PASSED
+042,Subscription box for regional organic spices,Ecommerce,50%,Promising (Med),PASSED
+043,AR-powered virtual try-on clothing store,Ecommerce,50%,Promising (Med),PASSED
+044,Hyper-local 15-minute delivery for pet supplies,Ecommerce,50%,Promising (Med),PASSED
+045,B2B marketplace for surplus industrial components,Ecommerce,50%,Promising (Med),PASSED
+046,AI-driven price optimization engine for sellers,Ecommerce,50%,Promising (Med),PASSED
+047,Platform for custom 3D-printed home decor,Ecommerce,50%,Promising (Med),PASSED
+048,Reverse auction marketplace for electronics repair,Ecommerce,50%,Promising (Med),PASSED
+049,Subscription-based rental for luxury maternity wear,Ecommerce,50%,Promising (Med),PASSED
+050,Zero-waste grocery packaging distribution platform,Ecommerce,50%,Promising (Med),PASSED
+051,Collaborative markdown workspace for remote engineering teams,SaaS,50%,Promising (Med),PASSED
+052,Automated legal contract drafting software,SaaS,50%,Promising (Med),PASSED
+053,AI-driven customer feedback sentiment mapper,SaaS,50%,Promising (Med),PASSED
+054,No-code API integration dashboard,SaaS,50%,Promising (Med),PASSED
+055,Serverless website performance tracking monitor,SaaS,50%,Promising (Med),PASSED
+056,Automated digital asset management system,SaaS,50%,Promising (Med),PASSED
+057,Dynamic employee onboarding workflow builder,SaaS,50%,Promising (Med),PASSED
+058,AI video editor optimized for social marketing,SaaS,50%,Promising (Med),PASSED
+059,Cloud-based inventory sync for multi-channel retail,SaaS,50%,Promising (Med),PASSED
+060,Privacy-focused website visitor heatmapper,SaaS,50%,Promising (Med),PASSED
+061,Smart home energy management optimizer,CleanTech,50%,Promising (Med),PASSED
+062,EV charging station locator and reservation network,CleanTech,50%,Promising (Med),PASSED
+063,Solar-powered portable water purification unit,CleanTech,50%,Promising (Med),PASSED
+064,AI-powered waste sorting conveyor software,CleanTech,50%,Promising (Med),PASSED
+065,IoT monitor for tracking corporate water waste,CleanTech,50%,Promising (Med),PASSED
+066,Biodegradable packaging material distribution network,CleanTech,50%,Promising (Med),PASSED
+067,Real-time industrial air quality tracking sensor,CleanTech,50%,Promising (Med),PASSED
+068,Community-owned wind energy crowdfunding engine,CleanTech,50%,Promising (Med),PASSED
+069,Recycled plastic filament for commercial 3D printing,CleanTech,50%,Promising (Med),PASSED
+070,App for trading surplus household food waste,CleanTech,50%,Promising (Med),PASSED
+071,Blockchain-based cold chain tracking for vaccines,Logistics,50%,Promising (Med),PASSED
+072,AI route optimization engine for urban delivery,Logistics,50%,Promising (Med),PASSED
+073,Crowdsourced peer-to-peer city courier network,Logistics,50%,Promising (Med),PASSED
+074,Smart container tracking for maritime shipping,Logistics,50%,Promising (Med),PASSED
+075,Automated warehouse drone inventory scanner,Logistics,50%,Promising (Med),PASSED
+076,B2B freight matching truck brokerage app,Logistics,50%,Promising (Med),PASSED
+077,Eco-friendly last-mile bicycle delivery coordination,Logistics,50%,Promising (Med),PASSED
+078,Predictive maintenance software for vehicle fleets,Logistics,50%,Promising (Med),PASSED
+079,Smart lockers for secure residential package drops,Logistics,50%,Promising (Med),PASSED
+080,Shared warehouse space on-demand marketplace,Logistics,50%,Promising (Med),PASSED
+081,VR platform for remote virtual property tours,PropTech,50%,Promising (Med),PASSED
+082,AI-driven rental yield estimation tool,PropTech,50%,Promising (Med),PASSED
+083,Smart building access management application,PropTech,50%,Promising (Med),PASSED
+084,Peer-to-peer office space sharing engine,PropTech,50%,Promising (Med),PASSED
+085,Automated tenant background check validation system,PropTech,50%,Promising (Med),PASSED
+086,IoT sub-metering platform for commercial grids,PropTech,50%,Promising (Med),PASSED
+087,Digital property management system for landlords,PropTech,50%,Promising (Med),PASSED
+088,Co-living community housing application platform,PropTech,50%,Promising (Med),PASSED
+089,Fractional farmland purchasing investment registry,PropTech,50%,Promising (Med),PASSED
+090,AI home interior design layout generator,PropTech,50%,Promising (Med),PASSED
+091,AI trademark search and filing assistant,LegalTech,N/A,Error,FAILED
+092,Blockchain-based smart escrow transaction management,LegalTech,50%,Promising (Med),PASSED
+093,Automated NDAs and startup legal paperwork hub,LegalTech,50%,Promising (Med),PASSED
+094,Online dispute resolution platform for small claims,LegalTech,N/A,Error,FAILED
+095,AI-driven case law research discovery engine,LegalTech,50%,Promising (Med),PASSED
+096,Corporate compliance tracking dashboard for fintechs,LegalTech,50%,Promising (Med),PASSED
+097,Digital signature platform with biometric proof,LegalTech,50%,Promising (Med),PASSED
+098,Legal billing and time tracking software for firms,LegalTech,50%,Promising (Med),PASSED
+099,Privacy policy and GDPR automation helper,LegalTech,N/A,Error,FAILED
+100,Freelance contract clause analyzer,LegalTech,N/A,Error,FAILED

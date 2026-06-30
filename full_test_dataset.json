@@ -1,0 +1,502 @@
+[
+  {
+    "id": "001",
+    "idea": "Drone-based autonomous pesticide sprayer",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "002",
+    "idea": "IoT soil nutrient monitoring sensor",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "003",
+    "idea": "AI-powered crop disease prediction app",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "004",
+    "idea": "Hydroponic vertical farming automated kit",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "005",
+    "idea": "Smart solar-powered irrigation controller",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "006",
+    "idea": "B2B marketplace for organic fertilizers",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "007",
+    "idea": "Predictive weather analytics for crop yield",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "008",
+    "idea": "Automated cattle health tracking wearable",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "009",
+    "idea": "Robotic weed removal system for fields",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "010",
+    "idea": "Satellite-based soil moisture mapping platform",
+    "domain": "AgriTech"
+  },
+  {
+    "id": "011",
+    "idea": "Blockchain-based decentralized micro-loans",
+    "domain": "FinTech"
+  },
+  {
+    "id": "012",
+    "idea": "AI-driven automated personal tax filler",
+    "domain": "FinTech"
+  },
+  {
+    "id": "013",
+    "idea": "Peer-to-peer crypto insurance marketplace",
+    "domain": "FinTech"
+  },
+  {
+    "id": "014",
+    "idea": "Fractional real estate investing platform",
+    "domain": "FinTech"
+  },
+  {
+    "id": "015",
+    "idea": "Smart expense tracker for freelance workers",
+    "domain": "FinTech"
+  },
+  {
+    "id": "016",
+    "idea": "Voice-activated biometric payment gateway",
+    "domain": "FinTech"
+  },
+  {
+    "id": "017",
+    "idea": "Automated cross-border remittance system",
+    "domain": "FinTech"
+  },
+  {
+    "id": "018",
+    "idea": "AI risk assessment tool for small business loans",
+    "domain": "FinTech"
+  },
+  {
+    "id": "019",
+    "idea": "Decentralized carbon credit trading registry",
+    "domain": "FinTech"
+  },
+  {
+    "id": "020",
+    "idea": "Micro-savings app based on daily round-ups",
+    "domain": "FinTech"
+  },
+  {
+    "id": "021",
+    "idea": "AI tutor for personalized exam preparation",
+    "domain": "EdTech"
+  },
+  {
+    "id": "022",
+    "idea": "VR-based immersive historical field trips",
+    "domain": "EdTech"
+  },
+  {
+    "id": "023",
+    "idea": "Gamified coding platform for young children",
+    "domain": "EdTech"
+  },
+  {
+    "id": "024",
+    "idea": "Peer-to-peer live skill sharing network",
+    "domain": "EdTech"
+  },
+  {
+    "id": "025",
+    "idea": "AI essay grader and structural feedback tool",
+    "domain": "EdTech"
+  },
+  {
+    "id": "026",
+    "idea": "Decentralized blockchain university degree verification",
+    "domain": "EdTech"
+  },
+  {
+    "id": "027",
+    "idea": "Adaptive reading app for dyslexic students",
+    "domain": "EdTech"
+  },
+  {
+    "id": "028",
+    "idea": "B2B corporate upskilling micro-course platform",
+    "domain": "EdTech"
+  },
+  {
+    "id": "029",
+    "idea": "Live interactive math labs using augmented reality",
+    "domain": "EdTech"
+  },
+  {
+    "id": "030",
+    "idea": "AI audio summarizer for textbooks",
+    "domain": "EdTech"
+  },
+  {
+    "id": "031",
+    "idea": "Wearable device for real-time hydration tracking",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "032",
+    "idea": "AI-powered skin cancer screening mobile app",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "033",
+    "idea": "Telehealth platform for specialized rural care",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "034",
+    "idea": "Smart pill dispenser with automated alerts",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "035",
+    "idea": "Predictive analytics for hospital bed management",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "036",
+    "idea": "Mental health chatbot using CBT methods",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "037",
+    "idea": "Blockchain-based secure medical records vault",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "038",
+    "idea": "AI posture corrector for remote desktop workers",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "039",
+    "idea": "DNA-based personalized meal delivery engine",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "040",
+    "idea": "AR assistance software for physical therapy",
+    "domain": "HealthTech"
+  },
+  {
+    "id": "041",
+    "idea": "Marketplace for buying second-hand textbooks",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "042",
+    "idea": "Subscription box for regional organic spices",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "043",
+    "idea": "AR-powered virtual try-on clothing store",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "044",
+    "idea": "Hyper-local 15-minute delivery for pet supplies",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "045",
+    "idea": "B2B marketplace for surplus industrial components",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "046",
+    "idea": "AI-driven price optimization engine for sellers",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "047",
+    "idea": "Platform for custom 3D-printed home decor",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "048",
+    "idea": "Reverse auction marketplace for electronics repair",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "049",
+    "idea": "Subscription-based rental for luxury maternity wear",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "050",
+    "idea": "Zero-waste grocery packaging distribution platform",
+    "domain": "Ecommerce"
+  },
+  {
+    "id": "051",
+    "idea": "Collaborative markdown workspace for remote engineering teams",
+    "domain": "SaaS"
+  },
+  {
+    "id": "052",
+    "idea": "Automated legal contract drafting software",
+    "domain": "SaaS"
+  },
+  {
+    "id": "053",
+    "idea": "AI-driven customer feedback sentiment mapper",
+    "domain": "SaaS"
+  },
+  {
+    "id": "054",
+    "idea": "No-code API integration dashboard",
+    "domain": "SaaS"
+  },
+  {
+    "id": "055",
+    "idea": "Serverless website performance tracking monitor",
+    "domain": "SaaS"
+  },
+  {
+    "id": "056",
+    "idea": "Automated digital asset management system",
+    "domain": "SaaS"
+  },
+  {
+    "id": "057",
+    "idea": "Dynamic employee onboarding workflow builder",
+    "domain": "SaaS"
+  },
+  {
+    "id": "058",
+    "idea": "AI video editor optimized for social marketing",
+    "domain": "SaaS"
+  },
+  {
+    "id": "059",
+    "idea": "Cloud-based inventory sync for multi-channel retail",
+    "domain": "SaaS"
+  },
+  {
+    "id": "060",
+    "idea": "Privacy-focused website visitor heatmapper",
+    "domain": "SaaS"
+  },
+  {
+    "id": "061",
+    "idea": "Smart home energy management optimizer",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "062",
+    "idea": "EV charging station locator and reservation network",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "063",
+    "idea": "Solar-powered portable water purification unit",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "064",
+    "idea": "AI-powered waste sorting conveyor software",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "065",
+    "idea": "IoT monitor for tracking corporate water waste",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "066",
+    "idea": "Biodegradable packaging material distribution network",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "067",
+    "idea": "Real-time industrial air quality tracking sensor",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "068",
+    "idea": "Community-owned wind energy crowdfunding engine",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "069",
+    "idea": "Recycled plastic filament for commercial 3D printing",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "070",
+    "idea": "App for trading surplus household food waste",
+    "domain": "CleanTech"
+  },
+  {
+    "id": "071",
+    "idea": "Blockchain-based cold chain tracking for vaccines",
+    "domain": "Logistics"
+  },
+  {
+    "id": "072",
+    "idea": "AI route optimization engine for urban delivery",
+    "domain": "Logistics"
+  },
+  {
+    "id": "073",
+    "idea": "Crowdsourced peer-to-peer city courier network",
+    "domain": "Logistics"
+  },
+  {
+    "id": "074",
+    "idea": "Smart container tracking for maritime shipping",
+    "domain": "Logistics"
+  },
+  {
+    "id": "075",
+    "idea": "Automated warehouse drone inventory scanner",
+    "domain": "Logistics"
+  },
+  {
+    "id": "076",
+    "idea": "B2B freight matching truck brokerage app",
+    "domain": "Logistics"
+  },
+  {
+    "id": "077",
+    "idea": "Eco-friendly last-mile bicycle delivery coordination",
+    "domain": "Logistics"
+  },
+  {
+    "id": "078",
+    "idea": "Predictive maintenance software for vehicle fleets",
+    "domain": "Logistics"
+  },
+  {
+    "id": "079",
+    "idea": "Smart lockers for secure residential package drops",
+    "domain": "Logistics"
+  },
+  {
+    "id": "080",
+    "idea": "Shared warehouse space on-demand marketplace",
+    "domain": "Logistics"
+  },
+  {
+    "id": "081",
+    "idea": "VR platform for remote virtual property tours",
+    "domain": "PropTech"
+  },
+  {
+    "id": "082",
+    "idea": "AI-driven rental yield estimation tool",
+    "domain": "PropTech"
+  },
+  {
+    "id": "083",
+    "idea": "Smart building access management application",
+    "domain": "PropTech"
+  },
+  {
+    "id": "084",
+    "idea": "Peer-to-peer office space sharing engine",
+    "domain": "PropTech"
+  },
+  {
+    "id": "085",
+    "idea": "Automated tenant background check validation system",
+    "domain": "PropTech"
+  },
+  {
+    "id": "086",
+    "idea": "IoT sub-metering platform for commercial grids",
+    "domain": "PropTech"
+  },
+  {
+    "id": "087",
+    "idea": "Digital property management system for landlords",
+    "domain": "PropTech"
+  },
+  {
+    "id": "088",
+    "idea": "Co-living community housing application platform",
+    "domain": "PropTech"
+  },
+  {
+    "id": "089",
+    "idea": "Fractional farmland purchasing investment registry",
+    "domain": "PropTech"
+  },
+  {
+    "id": "090",
+    "idea": "AI home interior design layout generator",
+    "domain": "PropTech"
+  },
+  {
+    "id": "091",
+    "idea": "AI trademark search and filing assistant",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "092",
+    "idea": "Blockchain-based smart escrow transaction management",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "093",
+    "idea": "Automated NDAs and startup legal paperwork hub",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "094",
+    "idea": "Online dispute resolution platform for small claims",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "095",
+    "idea": "AI-driven case law research discovery engine",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "096",
+    "idea": "Corporate compliance tracking dashboard for fintechs",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "097",
+    "idea": "Digital signature platform with biometric proof",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "098",
+    "idea": "Legal billing and time tracking software for firms",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "099",
+    "idea": "Privacy policy and GDPR automation helper",
+    "domain": "LegalTech"
+  },
+  {
+    "id": "100",
+    "idea": "Freelance contract clause analyzer",
+    "domain": "LegalTech"
+  }
+]

@@ -1,179 +1,115 @@
-from flask import Flask, render_template, request, jsonify, send_file
-from similarity import check_novelty
-from ai_suggestions import generate_suggestions
-from pdf_report import generate_dark_pdf
-import random
-import traceback
-import io
+import os
+from flask import Flask, request, jsonify, render_template
+from dotenv import load_dotenv
+from exa_py import Exa
+from groq import Groq
+from sentence_transformers import SentenceTransformer, util
+
+# Load the secret keys from your .env file
+load_dotenv()
 
 app = Flask(__name__)
 
-def get_verdict(novelty_score):
-    if novelty_score >= 75:
-        return {"label": "Highly Novel", "color": "green", "icon": "🟢"}
-    elif novelty_score >= 50:
-        return {"label": "Moderately Novel", "color": "gold", "icon": "🟡"}
-    elif novelty_score >= 30:
-        return {"label": "Somewhat Common", "color": "orange", "icon": "🟠"}
-    else:
-        return {"label": "Highly Similar", "color": "red", "icon": "🔴"}
+# Initialize our AI clients securely
+exa = Exa(api_key=os.getenv("EXA_API_KEY"))
+groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-def get_radar_scores(novelty_score, avg_similarity):
-    similarity  = avg_similarity or (100 - novelty_score)
-    originality = round(novelty_score * 0.95 + random.uniform(-3, 3), 1)
-    market_gap  = round(novelty_score * 0.85 + random.uniform(-5, 5), 1)
-    competition = round((100 - similarity) * 0.90 + random.uniform(-3, 3), 1)
-    innovation  = round(novelty_score * 0.80 + random.uniform(-8, 8), 1)
-    viability   = round(50 + (novelty_score - 50) * 0.4 + random.uniform(-5, 5), 1)
-    def clamp(v): return max(5, min(98, v))
-    return {
-        "Originality": clamp(originality),
-        "Market Gap":  clamp(market_gap),
-        "Competition": clamp(competition),
-        "Innovation":  clamp(innovation),
-        "Viability":   clamp(viability),
-    }
+print("Loading SBERT Semantic Engine (all-MiniLM-L6-v2)...")
+sbert_model = SentenceTransformer('all-MiniLM-L6-v2') 
+print("SBERT Engine Loaded Successfully!")
 
-def detect_category(idea):
-    idea_lower = idea.lower()
-    categories = {
-        "Fintech":    ["payment", "finance", "bank", "money", "invest", "crypto", "wallet", "loan", "insurance"],
-        "Edtech":     ["education", "learning", "course", "student", "school", "teach", "tutor", "skill"],
-        "Healthtech": ["health", "medical", "doctor", "hospital", "medicine", "fitness", "wellness", "patient"],
-        "Agritech":   ["farm", "crop", "agriculture", "farmer", "soil", "irrigation", "harvest"],
-        "Ecommerce":  ["shop", "store", "buy", "sell", "product", "delivery", "marketplace", "retail"],
-        "Foodtech":   ["food", "restaurant", "meal", "recipe", "cook", "eat", "delivery", "chef"],
-        "Transport":  ["ride", "drive", "vehicle", "transport", "commute", "bike", "car", "taxi"],
-        "AI/ML":      ["ai", "artificial intelligence", "machine learning", "model", "data", "predict", "automate"],
-        "SaaS":       ["software", "platform", "tool", "dashboard", "api", "cloud", "saas", "automation"],
-        "Social":     ["social", "community", "connect", "network", "chat", "messaging", "friend"],
-        "Design":     ["design", "agency", "branding", "creative", "web design", "graphic", "ui", "ux"],
-    }
-    for category, keywords in categories.items():
-        if any(kw in idea_lower for kw in keywords):
-            return category
-    return "Technology"
+def run_dual_mission_analysis(business_idea):
+    print(f"\n[Exa.ai] Fetching live competitors for: '{business_idea}'")
+    
+    # 1. RETRIEVAL LAYER (EXA AI NEURAL SEARCH)
+    india_list = []
+    try:
+        india_results = exa.search(f"A top {business_idea} company or startup based in India", type="neural", category="company", num_results=5)
+        india_list = [{"name": r.title, "url": r.url, "desc": str(getattr(r, 'text', 'No description provided.'))[:800]} for r in india_results.results] if india_results else []
+    except Exception as e:
+        print(f"[Exa.ai] India Mission failed: {e}")
 
+    global_list = []
+    try:
+        global_results = exa.search(f"A successful {business_idea} company or startup", type="neural", category="company", num_results=10)
+        india_urls = {comp["url"] for comp in india_list}
+        
+        if global_results:
+            for r in global_results.results:
+                if r.url not in india_urls and len(global_list) < 5:
+                    global_list.append({"name": r.title, "url": r.url, "desc": str(getattr(r, 'text', 'No description provided.'))[:800]})
+    except Exception as e:
+        print(f"[Exa.ai] Global Mission failed: {e}")
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+    all_competitors = india_list + global_list
+    if not all_competitors:
+        return {"error": "No competitors found to analyze. Try being more descriptive."}
 
+    # 2. SEMANTIC ENCODING & COSINE SIMILARITY LAYER (SBERT)
+    print("[SBERT] Calculating Spatial Vectors and Cosine Similarity...")
+    idea_embedding = sbert_model.encode(business_idea, convert_to_tensor=True)
+    max_similarity = 0.0
 
-@app.route("/analyze", methods=["POST"])
-def analyze():
-    data      = request.get_json(silent=True) or {}
-    user_idea = (data.get("idea") or "").strip()
+    for comp in all_competitors:
+        comp_embedding = sbert_model.encode(comp["desc"], convert_to_tensor=True)
+        sim_score = util.cos_sim(idea_embedding, comp_embedding).item()
+        sim_score = max(0.0, min(1.0, sim_score)) # Clamp between 0 and 1
+        
+        comp["similarity"] = round(sim_score * 100)
+        if sim_score > max_similarity:
+            max_similarity = sim_score
 
-    if not user_idea:
-        return jsonify({"error": "Please enter a business idea"}), 400
-    if len(user_idea) < 10:
-        return jsonify({"error": "Please describe your idea in more detail"}), 400
+    # 3. MATHEMATICAL NOVELTY SCORE COMPUTATION
+    calculated_novelty_score = round((1.0 - max_similarity) * 100)
+    print(f"[SBERT] Computed Mathematical Novelty Score: {calculated_novelty_score}%")
+
+    # 4. GROQ LLM STRATEGIC RECOMMENDATION LAYER (Now requesting 5 points)
+    print("[Groq] Generating AI Strategy based on Mathematical Score...")
+    context = "".join([f"Company: {c['name']} (Similarity: {c['similarity']}%)\nDescription: {c['desc']}\n\n" for c in all_competitors])
+
+    prompt = f"""
+    You are an expert startup analyst. 
+    A user proposed this business idea: "{business_idea}"
+    
+    Our SBERT Semantic Engine has calculated a Novelty Score of {calculated_novelty_score}% based on these real competitors:
+    {context}
+    
+    You MUST provide your response in exactly this formatted structure. 
+    INSTRUCTION: You must wrap the single most important sentence in your Market Analysis in == == marks so we can highlight it. (Example: ==The market is highly saturated with UAV systems.==)
+    
+    **Industry Domain:** [Insert 1-3 word industry category here, like "EdTech" or "AgriTech"]
+    **Novelty Score:** {calculated_novelty_score}%
+    
+    **Market Analysis:**
+    [Briefly explain WHY the idea received this novelty score based on the competitors provided. Remember to wrap the key takeaway sentence in == == marks.]
+    
+    **Actionable Suggestions:**
+    **1. Strategic Differentiation:** [Your specific differentiation suggestion here]
+    **2. Target Audience Pivot:** [Your specific audience suggestion here]
+    **3. Core Technology Focus:** [Your specific feature suggestion here]
+    **4. Monetization Strategy:** [Your specific pricing or revenue model suggestion here]
+    **5. Go-To-Market Tactic:** [Your specific launch or early-acquisition suggestion here]
+    """
 
     try:
-        print(f"\n{'='*60}")
-        print(f"ANALYZING: {user_idea}")
-
-        print("Step 1: Similarity check...")
-        result         = check_novelty(user_idea)
-        novelty_score  = result["novelty_score"]
-        matches        = result["matches"]
-        avg_similarity = result.get("avg_similarity", 0)
-        verdict        = get_verdict(novelty_score)
-        print(f"  Score: {novelty_score}% | Matches: {len(matches)}")
-
-        print("Step 2: Radar scores...")
-        radar = get_radar_scores(novelty_score, avg_similarity)
-
-        category = detect_category(user_idea)
-        print(f"  Category: {category}")
-
-        print("Step 3: AI suggestions...")
-        suggestions = generate_suggestions(user_idea, novelty_score, matches)
-        print(f"  Got {len(suggestions)} suggestions")
-
-        print("SUCCESS")
-        return jsonify({
-            "novelty_score":  novelty_score,
-            "verdict":        verdict,
-            "matches":        matches,
-            "suggestions":    suggestions,
-            "avg_similarity": avg_similarity,
-            "radar":          radar,
-            "category":       category,
-        })
-
-    except Exception as e:
-        print("\n" + "!"*60)
-        print(f"ERROR: {str(e)}")
-        traceback.print_exc()
-        print("!"*60)
-        return jsonify({"error": f"Analysis failed: {str(e)}"}), 500
-
-
-@app.route("/download_report", methods=["POST"])
-def download_report():
-    """
-    Generate and return a dark-theme PDF report.
-    Expects the same JSON payload as /analyze results:
-    {
-        "idea": "...",
-        "novelty_score": 50,
-        "verdict": {"label": "Somewhat Common", ...},
-        "category": "AI/ML",
-        "radar": {"Originality": 46, ...},
-        "matches": [...],
-        "suggestions": [...],
-        "avg_similarity": 45.2
-    }
-    """
-    try:
-        data = request.get_json(silent=True) or {}
-
-        idea           = (data.get("idea") or "Unknown Idea").strip()
-        novelty_score  = float(data.get("novelty_score", 50))
-        verdict_obj    = data.get("verdict", {})
-        verdict_label  = verdict_obj.get("label", "Unknown") if isinstance(verdict_obj, dict) else str(verdict_obj)
-        category       = data.get("category", "Technology")
-        radar          = data.get("radar", {})
-        matches        = data.get("matches", [])
-        suggestions    = data.get("suggestions", [])
-        avg_similarity = float(data.get("avg_similarity", 0))
-
-        # Add rank to matches if missing
-        for i, m in enumerate(matches):
-            if "rank" not in m:
-                m["rank"] = i + 1
-
-        # Generate PDF bytes
-        pdf_bytes = generate_dark_pdf(
-            idea           = idea,
-            novelty_score  = novelty_score,
-            verdict        = verdict_label,
-            category       = category,
-            radar          = radar,
-            matches        = matches,
-            suggestions    = suggestions,
-            avg_similarity = avg_similarity,
+        completion = groq_client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
         )
-
-        # Safe filename
-        safe_name = "".join(c for c in idea[:30] if c.isalnum() or c in " _-").strip()
-        safe_name = safe_name.replace(" ", "_") or "novelty_report"
-        filename  = f"Business_Idea_Novelty_{safe_name}.pdf"
-
-        return send_file(
-            io.BytesIO(pdf_bytes),
-            mimetype="application/pdf",
-            as_attachment=True,
-            download_name=filename,
-        )
-
+        ai_text = completion.choices[0].message.content
+        print("[Success] Full Pipeline Complete!\n")
     except Exception as e:
-        print(f"PDF generation error: {e}")
-        traceback.print_exc()
-        return jsonify({"error": f"PDF generation failed: {str(e)}"}), 500
+        print(f"[Groq Error] AI Analysis failed: {e}")
+        ai_text = f"**Industry Domain:** UNCATEGORIZED\n**Novelty Score:** {calculated_novelty_score}%\n\nError generating strategy due to API limits."
+    
+    return {"competitors": {"india": india_list, "global": global_list}, "ai_analysis": ai_text}
 
+@app.route('/')
+def home(): return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/analyze', methods=['POST'])
+def analyze(): return jsonify(run_dual_mission_analysis(request.json.get('idea')))
+
+if __name__ == '__main__':
+    app.run(debug=True, threaded=True)

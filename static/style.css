@@ -17,38 +17,7 @@
     --glass-bg2: rgba(255,255,255,0.07);
 }
 
-:root {
-    --bg: #1a1a1a;
-    --bg2: #222222;
-    --bg3: #2a2a2a;
-    --emerald: #2ecc71;
-    --emerald-dark: #27ae60;
-    --emerald-glow: rgba(46, 204, 113, 0.3);
-    --emerald-subtle: rgba(46, 204, 113, 0.08);
-    --white: #ffffff;
-    --off-white: rgba(255,255,255,0.87);
-    --muted: rgba(255,255,255,0.45);
-    --border: rgba(255,255,255,0.08);
-    --border-emerald: rgba(46,204,113,0.3);
-    --glass-bg: rgba(255,255,255,0.04);
-    --glass-bg2: rgba(255,255,255,0.07);
-}
-
 body {
-    --bg: #1a1a1a;
-    --bg2: #222222;
-    --bg3: #2a2a2a;
-    --emerald: #2ecc71;
-    --emerald-dark: #27ae60;
-    --emerald-glow: rgba(46, 204, 113, 0.3);
-    --emerald-subtle: rgba(46, 204, 113, 0.08);
-    --white: #ffffff;
-    --off-white: rgba(255,255,255,0.87);
-    --muted: rgba(255,255,255,0.45);
-    --border: rgba(255,255,255,0.08);
-    --border-emerald: rgba(46,204,113,0.3);
-    --glass-bg: rgba(255,255,255,0.04);
-    --glass-bg2: rgba(255,255,255,0.07);
     background: var(--bg);
     color: var(--off-white);
     font-family: 'Inter', sans-serif;
@@ -229,27 +198,6 @@ body::before {
     border: none;
     border-top: 1px solid var(--border-emerald);
     margin: 16px 0 0;
-}
-
-.header-rule.thin {
-    border-color: var(--border);
-    margin: 0;
-}
-
-.header-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    font-weight: 600;
-    color: var(--muted);
-}
-
-.header-nav span:hover {
-    color: var(--emerald);
-    cursor: pointer;
-    transition: color 0.2s;
 }
 
 /* ── HERO ── */
@@ -700,31 +648,6 @@ textarea:focus {
     margin-bottom: 16px;
 }
 
-.radar-legend {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-}
-
-.radar-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    letter-spacing: 1px;
-    color: var(--muted);
-    font-weight: 600;
-}
-
-.dot-gold, .dot-white {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.dot-gold { background: var(--emerald); box-shadow: 0 0 6px var(--emerald-glow); }
-.dot-white { background: rgba(255,255,255,0.3); }
-
 /* ── SUGGESTIONS ── */
 .suggestion-card {
     background: var(--glass-bg);
@@ -760,32 +683,6 @@ textarea:focus {
     padding-top: 4px;
 }
 
-/* ── FOOTER ── */
-.site-footer {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 20px 40px;
-    position: relative;
-    z-index: 1;
-}
-
-.footer-rule {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 8px 0;
-}
-
-.footer-inner {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--muted);
-    font-weight: 600;
-    padding: 8px 0;
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
@@ -794,64 +691,10 @@ textarea:focus {
     .site-title { font-size: 52px; }
     .hero-headline { font-size: 42px; }
 }
-.site-title{
-    color: white;
-}
-.site{
-    color:rgba(255,107,74,0.8);
-}
-/* ── INTERACTIVE INDIA MAP ── */
-#mapPanel {
-    margin-top: 20px;
-    animation: fadeIn 0.8s ease-out;
-}
 
-.state-path {
-    fill: rgba(255, 255, 255, 0.03); 
-    stroke: rgba(255, 255, 255, 0.1);
-    stroke-width: 1.5;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.state-path:hover {
-    fill: rgba(255, 255, 255, 0.1);
-    stroke: rgba(255, 255, 255, 0.3);
-}
-
-/* Emerald Glow for states with competitors */
-.state-path.has-competitor {
-    fill: var(--emerald-subtle); 
-    stroke: var(--emerald);
-    filter: drop-shadow(0 0 15px var(--emerald-glow));
-    stroke-width: 2;
-    animation: statePulse 2s infinite ease-in-out;
-}
-
-@keyframes statePulse {
-    0% { opacity: 0.7; }
-    50% { opacity: 1; }
-    100% { opacity: 0.7; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Tooltip Styling */
-#mapTooltip {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-color: var(--border-emerald) !important;
-}
-/* ── INTERACTIVE D3 MAPS & CHARTS ── */
-.market-gap-widget { 
-    margin-bottom: 20px; 
-    padding: 24px; 
-    border-radius: 16px; 
-    border-color: var(--border-emerald) !important; 
-}
-
+/* ── INTERACTIVE D3 MAPS ── */
 #mapPanel { 
+    margin-top: 20px;
     animation: fadeIn 0.8s ease-out; 
 }
 
@@ -868,7 +711,6 @@ textarea:focus {
     stroke: rgba(255, 255, 255, 0.3);
 }
 
-/* Emerald Glow for states/countries with competitors */
 .state-path.has-competitor {
     fill: var(--emerald-subtle); 
     stroke: var(--emerald);
@@ -910,4 +752,16 @@ textarea:focus {
 .loc-btn.active-loc { 
     background: var(--emerald) !important; 
     color: #000 !important; 
+}
+
+/* ───────────────────────────────────────────────────────────────── */
+/* ── PDF PAGE BREAK PROTECTIONS (Crucial for Multi-Page Reports) ── */
+/* ───────────────────────────────────────────────────────────────── */
+.match-card,
+.suggestion-card,
+.score-banner,
+.radar-widget,
+.section-header {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
 }
